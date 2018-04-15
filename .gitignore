@@ -1,0 +1,5 @@
+config/kyotei.config
+log/
+file/*.txt
+file/*.lzh
+

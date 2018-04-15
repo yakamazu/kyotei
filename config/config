@@ -1,0 +1,16 @@
+[date]
+from_date = 20180301
+to_date   = 20180302
+
+[file]
+download_url          = http://www1.mbrace.or.jp/od2/K/
+file_dir              = ../file/
+file_name_race_result =race_result.txt
+
+[db]
+db_connect_info = 
+db_host         = 
+db_port         = 
+db_dbname       = 
+db_user         = 
+db_password     = 
