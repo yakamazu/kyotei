@@ -1,9 +1,4 @@
-
 # coding: utf-8
-
-# In[38]:
-
-
 
 #import library
 import pandas as pd
@@ -75,7 +70,7 @@ def CleanFile():
 def SetRaceResult():
     race_result = pd.DataFrame(columns=['race_date', 'kaijo', 'race_no', 'distance', 'weather', 'wind_direction', 'wind_volume', 'wave', 'rank', 'entry_order', 'toroku_no', 'motor_no', 'boat_no', 'tenji'])
     race_result_odds = pd.DataFrame(columns=['race_date', 'kaijo', 'race_no', 'tansyo', 'fukusyo_1', 'fukusyo_2', 'rentan_2', 'renpuku_2', 'rentan_3', 'renpuku_3'])
-    #debug abc=1
+    abc=1
     with open(file_dir + file_name_race_result, 'r') as f:
         for line in f:
             '''
@@ -103,13 +98,12 @@ def SetRaceResult():
                 renpuku_2
                 rentan_3
                 renpuku_3
-            '''
-            #debug print(str(abc) + ' ' + str(len(line)))
-            #debug abc += 1
+            ''' 
+            print(str(abc) + ' ' + str(len(line)))
+            abc += 1
             if line.find('BGN') > -1:
                 kaijo = line[0:3]
             
-            #if len(line) == 66 and line.find('R') > -1:
             if line[4:5]=='R':
                 race_no = int(line[2:4])
                 distance = int(line[line.find('H')+1:line.find('H')+5])
@@ -134,7 +128,10 @@ def SetRaceResult():
                 if line.find('特払') > -1:
                     tansyo = int(line[23:30])
                 else:
-                    tansyo = int(line[20:30])
+                    if line[20:30].strip().isdigit() == True:
+                        tansyo = int(line[20:30])
+                    else:
+                        tansyo = 100
             if line.find('複勝') > -1:
                 if line[20:30].strip().isdigit() == True:
                     fukusyo_1 = int(line[20:30])
