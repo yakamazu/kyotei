@@ -70,7 +70,7 @@ def CleanFile():
 def SetRaceResult():
     race_result = pd.DataFrame(columns=['race_date', 'kaijo', 'race_no', 'distance', 'weather', 'wind_direction', 'wind_volume', 'wave', 'rank', 'entry_order', 'toroku_no', 'motor_no', 'boat_no', 'tenji'])
     race_result_odds = pd.DataFrame(columns=['race_date', 'kaijo', 'race_no', 'tansyo', 'fukusyo_1', 'fukusyo_2', 'rentan_2', 'renpuku_2', 'rentan_3', 'renpuku_3'])
-    abc=1
+    #debug abc=1
     with open(file_dir + file_name_race_result, 'r') as f:
         for line in f:
             '''
@@ -99,8 +99,8 @@ def SetRaceResult():
                 rentan_3
                 renpuku_3
             ''' 
-            print(str(abc) + ' ' + str(len(line)))
-            abc += 1
+            #debug print(str(abc) + ' ' + str(len(line)))
+            #debug abc += 1
             if line.find('BGN') > -1:
                 kaijo = line[0:3]
             
