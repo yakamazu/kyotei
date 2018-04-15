@@ -1,4 +1,9 @@
+
 # coding: utf-8
+
+# In[38]:
+
+
 
 #import library
 import pandas as pd
@@ -109,9 +114,9 @@ def SetRaceResult():
                 race_no = int(line[2:4])
                 distance = int(line[line.find('H')+1:line.find('H')+5])
                 weather = line[line.find('H')+7:line.find('H')+10].strip()
-                wind_direction = line[line.find('風')+1:line.find('風')+5].strip()
-                wind_volume = int(line[line.find('風')+6:line.find('風')+8])
-                wave = int(line[line.find('波')+2:line.find('波')+5])
+                wind_direction = line[line.find('H')+15:line.find('H')+18].strip()
+                wind_volume = int(line[line.find('H')+19:line.find('H')+20])
+                wave = int(line[line.find('H')+25:line.find('H')+28])
             
             if len(line) == 59 and line[2:3] == '0':
                 rank = int(line[2:4])
@@ -227,4 +232,18 @@ if __name__ == '__main__':
     
     print('ALL complete')
     
+
+
+# In[37]:
+
+a='   9R       静波まつり選                 H1800m  雨　  風  南　　 1m  波　  2cm'
+a='  10R       特別選抜Ｂ戦                 H1800m  雨　  風  南西　 4m  波　  2cm'
+
+a[a.find('H')+15:a.find('H')+18]
+a[a.find('H')+19:a.find('H')+20]
+a[a.find('H')+25:a.find('H')+28]
+
+#wind_direction = line[line.find('風')+1:line.find('風')+5].strip()
+#wind_volume = int(line[line.find('風')+6:line.find('風')+8])
+#wave = int(line[line.find('波')+2:line.find('波')+5])
 
