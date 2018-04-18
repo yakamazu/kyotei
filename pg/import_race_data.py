@@ -231,16 +231,4 @@ if __name__ == '__main__':
     
 
 
-# In[37]:
-
-a='   9R       静波まつり選                 H1800m  雨　  風  南　　 1m  波　  2cm'
-a='  10R       特別選抜Ｂ戦                 H1800m  雨　  風  南西　 4m  波　  2cm'
-
-a[a.find('H')+15:a.find('H')+18]
-a[a.find('H')+19:a.find('H')+20]
-a[a.find('H')+25:a.find('H')+28]
-
-#wind_direction = line[line.find('風')+1:line.find('風')+5].strip()
-#wind_volume = int(line[line.find('風')+6:line.find('風')+8])
-#wave = int(line[line.find('波')+2:line.find('波')+5])
 
