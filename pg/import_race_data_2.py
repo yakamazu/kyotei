@@ -57,7 +57,7 @@ def DownloadFile():
 
 def CleanFile():
     #remove download_file
-    cmd = "rm %s" % (file_dir + 'k*')
+    cmd = "rm %s" % (file_dir + 'b*')
     returncode = subprocess.call(cmd, shell=True)
 
     #remove encoding file
@@ -126,6 +126,7 @@ def Pands2Postgre(race_result_attribute):
 
     race_result_attribute.to_sql("wk_race_result_attribute", engine, if_exists="replace", index=False)
     
+    
 def ExecuteSql(sqltext):
     conn = psycopg2.connect("host=" + db_host + " port=" + db_port + " dbname=" + db_dbname + " user=" + db_user + " password=" + db_password)
     cur = conn.cursor()
@@ -147,11 +148,9 @@ def main():
     
     #race result to pandas
     race_result_attribute = SetRaceResult()
-    print('a')
     
     #from pandas to postgresql (copy)
     Pands2Postgre(race_result_attribute)
-    print('b')
     
     #insert race_result_attribute
     ExecuteSql('../sql/delete_race_result_attribute.sql')
@@ -188,4 +187,3 @@ if __name__ == '__main__':
     
     print('ALL complete')
     
-
