@@ -93,7 +93,7 @@ def SetRaceResult():
             #debug print(str(abc) + ' ' + str(len(line)))
             #debug abc += 1
             if line.find('BGN') > -1:
-                kaijo = line[0:3]
+                kaijo = line[0:2]
             
             if line[2:3]=='Ｒ':
                 race_no = int(line[0:2])
