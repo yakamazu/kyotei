@@ -2,4 +2,4 @@ config/kyotei.config
 log/
 file/*.txt
 file/*.lzh
-
+pg_analysis/*.pkl
