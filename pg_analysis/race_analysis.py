@@ -109,4 +109,6 @@ rf_3.fit(dataframe_x, dataframe_y_3)
 from sklearn.externals import joblib
 
 joblib.dump(rf_1, 'rf_1.pkl')
+joblib.dump(rf_2, 'rf_2.pkl')
+joblib.dump(rf_3, 'rf_3.pkl')
 
